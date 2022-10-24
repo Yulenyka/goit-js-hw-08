@@ -14,6 +14,9 @@ form.addEventListener(
 
 form.addEventListener('submit', event => {
   event.preventDefault();
+  //  const email = event.currentTarget.email.value;
+  //  const message = event.currentTarget.message.value;
+  //  console.log({ email, message });
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   form.reset();
   localStorage.removeItem(STORAGE_KEY)
