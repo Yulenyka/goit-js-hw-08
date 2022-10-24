@@ -17,16 +17,13 @@ form.addEventListener('submit', event => {
   const email = event.currentTarget.email.value;
   const message = event.currentTarget.message.value;
   console.log({ email, message });
-  // console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   form.reset();
   localStorage.removeItem(STORAGE_KEY);
 });
 
 (function dataFromLocalStorage() {
-  const objectToSave = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (localStorage.getItem(STORAGE_KEY)) {
+  const objectToSave = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
     for (let key in objectToSave) {
       form.elements[key].value = objectToSave[key];
     }
-  }
 })();
